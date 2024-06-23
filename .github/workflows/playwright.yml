@@ -9,7 +9,11 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
+    - name: My first step with files
+      run: ls
     - uses: actions/checkout@v4
+    - name: My second step with files
+      run: ls
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
