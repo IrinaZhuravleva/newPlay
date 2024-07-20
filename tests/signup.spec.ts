@@ -12,18 +12,11 @@ test("check sign up", async ({ page }) => {
   const submitButton = page.getByRole("button", { name: "Submit" });
 
   await page.goto("https://codemetrics.dev/");
-
-  await signUpButton.waitFor();
   await signUpButton.click();
-  await sighUpHeading.waitFor();
   await expect(sighUpHeading).toBeVisible();
-  await emailSignUpInput.waitFor();
   await emailSignUpInput.fill(uuidv4() + "@gmail.com");
-  await passwordSignUpInput.waitFor();
   await passwordSignUpInput.fill(uuidv4());
   await submitButton.click();
-  await profileLink.waitFor();
   await expect(profileLink).toBeVisible();
-  await profileLink.click();
   await page.waitForURL(/\/profile/gm);
 });
