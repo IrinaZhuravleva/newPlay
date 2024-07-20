@@ -9,7 +9,6 @@ test("check sign in", async ({ page }) => {
   const emailSignInInput = page.locator('[data-test-selector="email"]');
 
   await page.goto("https://codemetrics.dev/");
-  await page.pause()
   await signInButton.click();
   await expect(sighInHeading).toBeVisible();
   await emailSignInInput.waitFor();

@@ -18,5 +18,5 @@ test("check sign up", async ({ page }) => {
   await passwordSignUpInput.fill(uuidv4());
   await submitButton.click();
   await expect(profileLink).toBeVisible();
-  await page.waitForURL(/\/profile/gm);
+  await page.waitForURL(/\/projects/gm);
 });
