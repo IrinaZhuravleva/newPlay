@@ -35,6 +35,7 @@ test("Creditsafe website user journey test", async ({ page }) => {
   await page.getByPlaceholder("Phone Number").click();
   await page.getByPlaceholder("Phone Number").fill("7777777777");
   await page.getByRole("button", { name: "Get quote" }).click();
+  await page.getByRole("link", { name: "Trading internationally" }).waitFor();
   await page.getByRole("link", { name: "Trading internationally" }).click();
   await page.getByPlaceholder("Company Name").click();
   await page.getByPlaceholder("Company Name").fill("Gmail");
